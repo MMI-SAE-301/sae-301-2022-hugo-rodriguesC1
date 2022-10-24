@@ -1,22 +1,16 @@
 <template>
-  <nav>
-    <h4 class="text-xl">
-      <Bars3Icon class="inline-block h-5 w-5 text-blue-500" />
-      menu (dans <code class="font-mono">/src/App.vue</code>)
-    </h4>
-    <ul>
-      <li>
-        <router-link class="text-red-600 underline" to="/">
-          lien vers
-          <code class="font-mono">/src/pages/index.vue</code>
-        </router-link>
-      </li>
+  <nav class="bg-white w-full h-36 flex justify-between px-32 items-center">
+    <RouterLink to="/"><img src="/src/assets/Logo.svg" alt="Logo du site" class="w-60"></RouterLink>
+    <ul class="flex gap-28 font-poppins uppercase text-xl font-medium">
+      <li><RouterLink to="/"/>Accueil</li>
+      <li><RouterLink to=""/>Personnaliser</li>
+      <li><RouterLink to="/connexion">Mon compte</RouterLink></li>
     </ul>
   </nav>
 
   <!-- Affiche les pages -->
   <Suspense>
-    <router-view class="m-2 border-2 p-2" />
+    <router-view class="bg-beige-100 w-full h-full" />
   </Suspense>
 </template>
 
