@@ -17,10 +17,11 @@ defineProps<{
              :options="colors"
              :sections-schema="{inner:{$el:null},decorator:{$el:null},}"
              input-class="peer sr-only"
-             options-class="flex gap-1 mb-3 mt-1"
-              >
+             options-class="flex gap-1 mb-12 mt-1"
+             legend-class="font-poppins text-3xl font-medium "
+             >
         <template #label="context">
-          <div class="h-8 w-10 border-4 peer-checked:border-blue-400" :style="{backgroundColor: context.option.value}"/>
+          <div class="h-9 w-16  peer-checked:border-blue-400 peer-checked:border-2" :style="{backgroundColor: context.option.value}"/>
           <span class="sr-only">{{context.option.label}}</span>
         </template>
     </FormKit>

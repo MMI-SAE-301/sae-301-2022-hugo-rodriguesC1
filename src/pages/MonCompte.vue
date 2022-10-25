@@ -3,6 +3,6 @@
 
 <template>
     <div>
-        <h1>Mon compte se connecter</h1>
+        <h1>Mon compte</h1>
     </div>
 </template>

@@ -1,10 +1,16 @@
+<script setup lang="ts">
+
+import {user} from '../src/supabase'
+
+</script>
+
 <template>
   <nav class="bg-white w-full h-36 flex justify-between px-32 items-center">
     <RouterLink to="/"><img src="/src/assets/Logo.svg" alt="Logo du site" class="w-60"></RouterLink>
     <ul class="flex gap-28 font-poppins uppercase text-xl font-medium items-center">
       <li><RouterLink to="/">Accueil</RouterLink></li>
       <li><RouterLink to="/montre/new">Personnaliser</RouterLink></li>
-      <li><RouterLink to="/connexion">Mon compte</RouterLink></li>
+      <li><RouterLink v-if="user" to="/connexion">Mon compte</RouterLink><RouterLink to="/connexion">Mon compte</RouterLink></li>
       <li><img src="@/assets/cartIcon.svg"/></li>
     </ul>
   </nav>
