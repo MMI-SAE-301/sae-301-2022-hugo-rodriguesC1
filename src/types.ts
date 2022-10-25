@@ -1,9 +1,7 @@
 export interface Montre {
     bracelet?: string;
-    Ecran1?: string;
-    Boitier1?: string;
-    Ecran2?: string;
-    Boitier2?: string;
+    ecran?: string;
+    boitier?: string;
     forme?: string
   }
   
@@ -14,3 +12,29 @@ export interface Montre {
     "#BFDBFE": "Bleu",
     "#1d1c1c": "Noir",
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

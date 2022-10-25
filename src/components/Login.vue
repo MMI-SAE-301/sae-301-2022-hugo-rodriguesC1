@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { supabase, user } from '../supabase';
+import LoginButton from './LoginButton.vue';
 </script>
 <template>
-<div>
-    <button class="p-3 m-3 bg-green-800 text-white" @pointerdown="supabase.auth.signIn({provider: 'google'})">
-        Se connecter avec Google
-    </button>
-    <button class="p-3 m-3 bg-green-800 text-white" @pointerdown="supabase.auth.signIn({provider: 'facebook'})">
-        Se connecter avec Facebook
-    </button>
-</div>
+    <div class="col-span-2 col-start-5 mt-36">
+        <LoginButton :logo="'/src/assets/gLogo.svg'" :name="'Google'" @pointerdown="supabase.auth.signIn({provider: 'google'})"/>
+        <LoginButton :logo="'/src/assets/fbLogo.svg'" :name="'Facebook'" @pointerdown="supabase.auth.signIn({provider: 'facebook'})" class="mt-9"/>
+
+    </div>
 </template>  

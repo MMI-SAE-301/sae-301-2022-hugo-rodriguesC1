@@ -4,10 +4,8 @@ import { ref } from "@vue/reactivity";
 
 withDefaults(defineProps<Montre>(), {
     bracelet: "white",
-    Ecran1: "white",
-    Boitier1: "white",
-    Ecran2: "white",
-    Boitier2: "white",
+    ecran: "white",
+    boitier: "white",
     forme: "Ovale",
 });
 
@@ -22,12 +20,12 @@ withDefaults(defineProps<Montre>(), {
         <path id="BraceDown" d="M359.24,542.41s-29.41,90.72-27.11,144.47c0,0-18.43,26.85-103.87,23.59-85.45-3.26-109.35-23.02-109.35-23.02,0,0-4.48-132.37-23.98-153.42,0,0,90.5,6.57,142.63,8.56,52.14,1.99,121.68-.18,121.68-.18Z" :fill='bracelet' stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
     </g>
     <g id="boitier" v-if="forme == 'Dali'">
-        <path id="Boitier1" d="M238.72,609.41s-128.19,37.78-215.91-134.91C-64.91,301.8,123.38,84.25,241.52,31.62c118.14-52.63,109.95,164.47,168.43,236.63,58.48,72.15,7.77,258.41-35.09,292.97-42.86,34.57-136.14,48.19-136.14,48.19Z" :fill="Boitier1" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
-        <path id="Ecran1" d="M234.91,576.3s-110.71,32.63-186.46-116.51C-27.31,310.65,135.3,122.77,237.33,77.31c102.03-45.45,94.96,142.04,145.46,204.35,50.51,62.31,6.71,223.16-30.3,253.02s-117.58,41.62-117.58,41.62Z" :fill="Ecran1" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
+        <path id="Boitier1" d="M238.72,609.41s-128.19,37.78-215.91-134.91C-64.91,301.8,123.38,84.25,241.52,31.62c118.14-52.63,109.95,164.47,168.43,236.63,58.48,72.15,7.77,258.41-35.09,292.97-42.86,34.57-136.14,48.19-136.14,48.19Z" :fill="boitier" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
+        <path id="Ecran1" d="M234.91,576.3s-110.71,32.63-186.46-116.51C-27.31,310.65,135.3,122.77,237.33,77.31c102.03-45.45,94.96,142.04,145.46,204.35,50.51,62.31,6.71,223.16-30.3,253.02s-117.58,41.62-117.58,41.62Z" :fill="ecran" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
     </g>
     <g id="boitier_rond" v-if="forme == 'Ovale'">
-        <ellipse id="Boitier2" cx="230.26" cy="343" rx="192.34" ry="300.26" :fill="Boitier2" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
-        <ellipse id="Ecran2" cx="230.26" cy="343" rx="169.19" ry="271.66" :fill="Ecran2" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
+        <ellipse id="Boitier2" cx="230.26" cy="343" rx="192.34" ry="300.26" :fill="boitier" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
+        <ellipse id="Ecran2" cx="230.26" cy="343" rx="169.19" ry="271.66" :fill="ecran" stroke="#000" stroke-miterlimit="10" stroke-width=".5" />
     </g>
     <g id="ecran">
         <text transform="translate(95.68 329.78)" font-family="ArialMT, Arial" font-size="98" letter-spacing="-.11em">

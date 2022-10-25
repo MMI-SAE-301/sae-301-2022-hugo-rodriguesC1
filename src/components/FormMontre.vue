@@ -20,26 +20,29 @@ console.log(forme)
 </script>
 
 <template>
-  <div class="p-2 flex gap-20">
-    <div class="w-64">
+  <div class="grid grid-cols-10 gap-[30px] row-auto lg:grid-cols-8 pb-96">
+    
+    <div class="col-span-3 col-start-2 mt-32">
+      <h1 class="text-5xl font-medium ">Personnalisation</h1>
+      <FormKit type="form" v-model="montre" :submit-attrs="{classes: { input: 'bg-green-600 text-green-100 p-2 rounded-lg text-xl mt-2' }}" submit-label="Enregister" >
+          <FormKitListColors name="bracelet" label="Bracelet"/>
+          <FormKit name="forme"
+                   :value="forme"
+                   v-model="forme"
+                   type="radio"
+                   label="Forme du cadran"
+                   :options="['Ovale', 'Dali']"
+                   options-class="flex gap-5 mb-3 mt-1"
+                   />
+          <FormKitListColors v-if="forme == 'Ovale'" name="ecran" label="Ecran"/>
+          <FormKitListColors v-if="forme == 'Ovale'" name="boitier" label="Boitier"/>
+          <FormKitListColors v-if="forme == 'Dali'" name="ecran" label="Ecran Dali"/>
+          <FormKitListColors v-if="forme == 'Dali'" name="boitier" label="Boitier Dali"/>
+          <FormKit name="commander" label="commander" type="button" input-class="text-blue-100 text-xl p-2 bg-blue-600 rounded-lg" />
+      </FormKit>
+    </div>
+    <div class="col-span-2 col-start-6 mt-16">
         <MontreConnectee v-bind="montre"/>
     </div>
-    <FormKit type="form" v-model="montre" :submit-attrs="{classes: { input: 'bg-green-600 text-green-100 p-2 rounded-lg text-xl mt-2' }}" submit-label="Enregister" >
-        <FormKitListColors name="bracelet" label="Bracelet"/>
-        <FormKit name="forme"
-                 :value="forme"
-                 v-model="forme"
-                 type="radio"
-                 label="Forme du cadran"
-                 :options="['Ovale', 'Dali']"
-                 options-class="flex gap-5 mb-3 mt-1"
-                 />
-        <FormKitListColors v-if="forme == 'Ovale'" name="Ecran2" label="Ecran"/>
-        <FormKitListColors v-if="forme == 'Ovale'" name="Boitier2" label="Boitier"/>
-        <FormKitListColors v-if="forme == 'Dali'" name="Ecran1" label="Ecran Dali"/>
-        <FormKitListColors v-if="forme == 'Dali'" name="Boitier1" label="Boitier Dali"/>
-
-        <FormKit name="commander" label="commander" type="button" input-class="text-blue-100 text-xl p-2 bg-blue-600 rounded-lg" />
-    </FormKit>
   </div>
 </template>

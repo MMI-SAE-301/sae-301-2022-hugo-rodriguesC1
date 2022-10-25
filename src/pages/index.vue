@@ -4,9 +4,8 @@ import Circles from "@/components/Circles.vue";
 </script>
 
 <template>
-  <div class="grid grid-cols-10 gap-[30px] row-auto">
-    <div class="col-span-1"></div>
-    <div class="font-poppins col-span-2 mt-36">
+  <div class="grid grid-cols-10 gap-[30px] row-auto lg:grid-cols-8 pb-72">
+    <div class="font-poppins col-span-2 mt-32 col-start-2">
       <h1 class="text-5xl font-medium ">
         Montre connectée personnalisable
       </h1>
@@ -15,8 +14,8 @@ import Circles from "@/components/Circles.vue";
                                           and typesetting industry.
       </p>
     </div>
-    <Button class="row-start-2 col-start-2 col-span-1 mt-10"/>
+    <RouterLink to="/montre/new" class="row-start-2 col-start-2 col-span-1 mt-10"><Button /></RouterLink>
 
-    <Circles  class="col-start-6 mt-16"/>
+    <Circles  class="col-start-6 mt-16 lg:col-start-5"/>
   </div>
 </template>
