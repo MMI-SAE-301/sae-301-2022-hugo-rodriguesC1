@@ -19,6 +19,7 @@ forme.value = 'Ovale';
 const commandeClick = ref()
 commandeClick.value = false
 
+const reste = ref()
 
 if (props.id) {
   // On charge les données de la maison
@@ -48,6 +49,16 @@ async function commander(){
   .eq('montre_id', props.id)
   commandeClick.value=true
 }
+
+
+
+//comptage des exemplaires restants
+const { error, data, count } = await supabase
+.from('montre')
+.select('*', { count: 'exact', head:true })
+.eq("montre_commandee", true)
+reste.value = (150 - count)
+
 
 </script>
 
@@ -89,7 +100,7 @@ async function commander(){
             <div class="flex flex-col gap-5">
               <div class="font-poppins text-3xl font-medium w-full">Prix</div>
               <div class="font-poppins text-xl font-normal">299.99 €</div>
-              <div class="font-poppins bg-white text-zinc-700 w-full px-5 py-2 uppercase text-xl mt-2">Il reste seulement 150 exemplaires</div>
+              <div class="font-poppins bg-white text-zinc-700 w-full px-5 py-2 uppercase text-xl mt-2">Il reste seulement {{reste}} exemplaires</div>
               <FormKit type="submit" input-class="font-poppins bg-rose-100 px-5 py-2 uppercase text-xl mt-20" >Enregister</FormKit>
               <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl mt-2" @click="commander"/>
               <div v-if="commandeClick" class="font-poppins text-xl mt-2">Merci pour votre commande, <br>

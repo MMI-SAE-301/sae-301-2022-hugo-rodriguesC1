@@ -10,7 +10,7 @@ import {user} from '../src/supabase'
     <ul class="flex gap-28 font-poppins uppercase text-xl font-medium items-center">
       <li><RouterLink to="/">Accueil</RouterLink></li>
       <li><RouterLink to="/montre/new">Personnaliser</RouterLink></li>
-      <li><RouterLink v-if="user" to="/connexion">Mon compte</RouterLink><RouterLink to="/connexion">Mon compte</RouterLink></li>
+      <li><RouterLink v-if="user" to="/moncompte">Mon compte</RouterLink><RouterLink v-else to="/connexion">Mon compte</RouterLink></li>
       <li><img src="@/assets/cartIcon.svg"/></li>
     </ul>
   </nav>
@@ -41,6 +41,4 @@ import {user} from '../src/supabase'
   </footer>
 </template>
 
-<script setup lang="ts">
-import {  Bars3Icon } from "@heroicons/vue/20/solid";
-</script>
+
