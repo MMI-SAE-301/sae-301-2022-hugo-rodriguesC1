@@ -124,7 +124,8 @@ reste.value = (150 - count)
               <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl mt-2" @click="supprimer"/>
               <div v-if="commandeClick" class="font-poppins text-xl mt-2">Merci pour votre commande, <br>
                    un code de réduction vous attend <br>
-                   dans votre boite mail</div>
+                   dans votre boite mail. <br>
+                   Vous allez être redirigé.</div>
             </div>
           </div>
       </FormKit>
