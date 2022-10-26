@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Montre } from "@/types";
-import { colors } from "@/types";
+import { colors, materiaux } from "@/types";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { supabase } from "../supabase";
@@ -101,7 +101,7 @@ reste.value = (150 - count)
                        legend-class="font-poppins text-3xl font-medium w-full"
                        >
                         <template #label="context">
-                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative" :style="{backgroundColor: context.option.value}">
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative">
                             <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal">{{context.option.label}}</span>
                           </div>
             
@@ -116,6 +116,38 @@ reste.value = (150 - count)
               <MontreConnectee v-bind="montre"/>
             </div>
             <div class="flex flex-col gap-5">
+              <FormKit name="materiaux_bracelet"
+                       type="radio"
+                       label="Matéraux du bracelet"
+                       :options="materiaux"
+                       :sections-schema="{inner:{$el:null},decorator:{$el:null},}"
+                       input-class="peer sr-only"
+                       options-class="flex gap-5 mb-5 mt-1"
+                       legend-class="font-poppins text-3xl font-medium w-full"
+                       >
+                        <template #label="context">
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative">
+                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal">{{context.option.label}}</span>
+                          </div>
+            
+                        </template>
+                      </FormKit>
+              <FormKit name="materiaux_boitier"
+                       type="radio"
+                       label="Matéraux du Boitier"
+                       :options="materiaux"
+                       :sections-schema="{inner:{$el:null},decorator:{$el:null},}"
+                       input-class="peer sr-only"
+                       options-class="flex gap-5 mb-3 mt-1"
+                       legend-class="font-poppins text-3xl font-medium w-full"
+                       >
+                        <template #label="context">
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative" >
+                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal">{{context.option.label}}</span>
+                          </div>
+            
+                        </template>
+                      </FormKit>
               <div class="font-poppins text-3xl font-medium w-full">Prix</div>
               <div class="font-poppins text-xl font-normal">299.99 €</div>
               <div class="font-poppins bg-white text-zinc-700 w-full px-5 py-2 uppercase text-xl mt-2">Il reste seulement {{reste}} exemplaires</div>
