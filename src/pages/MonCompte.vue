@@ -3,7 +3,7 @@
 import {user, supabase} from '../supabase'
 import type { Montre } from "@/types";
 import { colors } from "@/types";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import MontreConnectee from "../components/MontreConnectee.vue";
 
@@ -33,8 +33,16 @@ async function getMontreC() {
     listeMontreCommandee.value=data
 }
 
-getMontre()
-getMontreC()
+async function signout() {
+    const { error } = await supabase.auth.signOut()
+    router.push('/')
+}
+
+onMounted(()=>{
+    getMontre()
+    getMontreC()
+})
+
 
 
 </script>
@@ -46,6 +54,9 @@ getMontreC()
             <div class="text-xl mt-12 font-normal">{{user.email}}</div>
             <h2 class="font-medium text-3xl mt-12">Mes créations</h2>    
         </div>
+        <button class="p-3 bg-rose-200 text-zinc-700 text-xl mt-32 uppercase col-start-7 h-16" v-if="user" @click="signout">
+            Se déconnecter
+        </button>
         <div class="row-start-2 col-start-2 col-span-6 bg-white h-96 w-full overflow-y-scroll ">
             <div class="grid grid-flow-col auto-cols-max grid-rows-1 gap-28 h-full px-20 py-12 ">
                 <RouterLink :to="{ name: 'montre-edit-id', params: { id: montre.montre_id } }"  v-for="montre in listeMontre" :key="montre.montre_id">
@@ -61,6 +72,3 @@ getMontreC()
     </div>
 </template>
 
-<!-- <button class="p-3 bg-rose-200 text-zinc-700 text-xl mt-24" v-if="user" @pointerdown="supabase.auth.signOut()">
-    Se déconnecter
-    </button> -->
