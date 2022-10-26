@@ -10,9 +10,15 @@ import Circles from "@/components/Circles.vue";
       <h1 class="text-5xl font-medium ">
         Montre connectée personnalisable
       </h1>
-      <p class="font-light text-xl mt-12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
-                                          and typesetting industry.
+      <p class="font-light text-xl mt-12">
+        Lancez-vous dans la personnalisation
+        de la toute dernière montre connectée 
+        Tik Tak. Cette montre épurée au design 
+        original offre un large choix de 
+        personnalisation. Cliquez sur le 
+        bouton pour commencer l’expérience. 
+        Ne tardez pas, seulement 150 
+        exemplaires sont disponibles.
       </p>
     </div>
     <RouterLink to="/montre/new" class="row-start-2 col-start-2 col-span-1 mt-10"><Button /></RouterLink>
@@ -33,5 +39,43 @@ import Circles from "@/components/Circles.vue";
         <img src="@/assets/visuel3.webp" alt="visuel" class="max-h-16">
       </div>
     </div>
+
+    <div class="flex flex-row col-span-6 col-start-2 row-start-4 mt-40 justify-between items-center px-40">
+      <div class="flex flex-col gap-12 font-poppins">
+        <h2 class="text-5xl font-medium ">
+          Montre connectée <br>
+          haut de gamme
+        </h2>
+        <p class="text-xl font-normal w-5/6">
+          Pour ce nouveau modèle, nous avons 
+          séléctionné les meilleurs technologies
+           disponibles. Autonomie, performances
+            et précision des capteurs, tous les
+             aspects ont été améliorés.
+        </p>
+      </div>
+      <img src="@/assets/MU2.webp" alt="visuel de la montre" class="max-h-96">
+    </div>
+
+    <div class="flex flex-row col-span-6 col-start-2 row-start-5 mt-40 items-center px-40 gap-28">
+      <img src="@/assets/MU3.webp" alt="visuel de la montre" class="max-h-96">
+      <div class="flex flex-col gap-12 font-poppins">
+        <h2 class="text-5xl font-medium">
+          Un design original
+        </h2>
+        <p class="text-xl font-normal w-5/6">
+          Pour eux qui recherchent une montre 
+          connectée qui se démarque visuellement,
+           le modèle Dali est fait pour vous. 
+           Ce cadran à la forme irréguilère 
+           apporte un vent de fraicheur dans 
+           le monde des montres connectées
+        </p>
+      </div>
+    </div>
+
+    <RouterLink to="/montre/new" class=" row-start-6 col-span-2 col-start-4 mx-20 mt-28"><Button /></RouterLink> 
+
+
   </div>
 </template>
