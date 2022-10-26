@@ -57,7 +57,7 @@ onMounted(()=>{
         <button class="flex items-center justify-center bg-rose-200 text-zinc-700 text-xl mt-32 uppercase col-start-7 h-16" v-if="user" @click="signout">
             Se déconnecter
         </button>
-        <div class="row-start-2 col-start-2 col-span-6 bg-white h-96 w-full overflow-y-scroll scrollbar-hide ">
+        <div class="row-start-2 col-start-2 col-span-6 bg-white h-96 w-full overflow-y-scroll scrollbar-hide dark:bg-black">
             <div class="grid grid-flow-col auto-cols-max grid-rows-1 gap-28 h-full px-20 py-12 ">
                 <RouterLink :to="{ name: 'montre-edit-id', params: { id: montre.montre_id } }"  v-for="montre in listeMontre" :key="montre.montre_id">
                     <MontreConnectee v-bind="montre" class="h-full w-full"/>
