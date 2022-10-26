@@ -26,17 +26,17 @@ import Circles from "@/components/Circles.vue";
     <Circles  class="col-start-6 mt-16 lg:col-start-5"/>
 
     <div class="row-start-3 col-start-2 col-span-6 font-poppins text-6xl font-normal uppercase mt-52 flex flex-col gap-5">
-      <div class="flex flex-row gap-7 items-center justify-end">
+      <div class="flex flex-row gap-7 items-center justify-end ">
         <div>Personnalise</div>
         <img src="@/assets/visuel1.webp" alt="visuel" class="max-h-16">
       </div>
       <div class="flex flex-row gap-7 items-center justify-start">
-        <img src="@/assets/visuel2.webp" alt="visuel" class="max-h-16">
+        <img src="@/assets/visuel2.webp" alt="visuel" class="max-h-16 ">
         <div>ta montre</div>
       </div>
       <div class="flex flex-row gap-7 items-center justify-center">
         <div>connectée</div>
-        <img src="@/assets/visuel3.webp" alt="visuel" class="max-h-16">
+        <img src="@/assets/visuel3.webp" alt="visuel" class="max-h-16 ">
       </div>
     </div>
 

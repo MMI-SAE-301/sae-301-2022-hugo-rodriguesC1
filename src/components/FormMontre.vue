@@ -86,7 +86,7 @@ reste.value = (150 - count)
     <div class="col-span-8 col-start-2 mt-32 relative">
       <h1 class="text-5xl font-medium mb-12">Personnalisation</h1>
       <FormKit type="form" v-model="montre" @submit="upsertMontre" :submit-attrs="{classes: { input: 'sr-only' }}" submit-label="Enregister" >
-          <div class="flex flex-row gap-32">
+          <div class="flex flex-row gap-32 items-center">
             <div>
               <FormKitListColors name="bracelet" label="Bracelet"/>
               <FormKit name="forme"
@@ -112,7 +112,7 @@ reste.value = (150 - count)
               <FormKitListColors v-if="forme == 'Dali'" name="ecran" label="Ecran"/>
               <FormKitListColors v-if="forme == 'Dali'" name="boitier" label="Boitier"/>
             </div>
-            <div class="w-96 -mt-32">
+            <div class="w-96">
               <MontreConnectee v-bind="montre"/>
             </div>
             <div class="flex flex-col gap-5">
@@ -151,9 +151,11 @@ reste.value = (150 - count)
               <div class="font-poppins text-3xl font-medium w-full">Prix</div>
               <div class="font-poppins text-xl font-normal">299.99 €</div>
               <div class="font-poppins bg-white text-zinc-700 w-full px-5 py-2 uppercase text-xl mt-2">Il reste seulement {{reste}} exemplaires</div>
-              <FormKit type="submit" input-class="font-poppins bg-green-75 px-5 py-2 uppercase text-xl mt-20" >Enregister</FormKit>
-              <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl mt-2" @click="commander"/>
-              <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl mt-2" @click="supprimer"/>
+              <div class="flex flex-row gap-3 items-center justify-between">
+                <FormKit type="submit" input-class="font-poppins bg-green-75 px-5 py-2 uppercase text-xl " >Enregister</FormKit>
+                <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl " @click="commander"/>
+                <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl " @click="supprimer"/>
+              </div>
               <div v-if="commandeClick" class="font-poppins text-xl mt-2">Merci pour votre commande, <br>
                    un code de réduction vous attend <br>
                    dans votre boite mail. <br>
