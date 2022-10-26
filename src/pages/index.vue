@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from "@/components/Button.vue";
 import Circles from "@/components/Circles.vue";
+
 </script>
 
 <template>

@@ -48,6 +48,24 @@ async function commander(){
   .update({ montre_commandee: true })
   .eq('montre_id', props.id)
   commandeClick.value=true
+  setTimeout(() => {
+    router.push("/moncompte");
+  }, 5000)
+}
+
+async function supprimer() {
+  const { error } = await supabase
+    .from("montre")
+    .delete()
+    .eq("montre_id", props.id );
+  if (error) {
+    console.error(
+      "Erreur à la suppression de la montre, erreur :",
+      error
+    );
+  } else {
+    router.push("/");
+  }
 }
 
 
@@ -101,8 +119,9 @@ reste.value = (150 - count)
               <div class="font-poppins text-3xl font-medium w-full">Prix</div>
               <div class="font-poppins text-xl font-normal">299.99 €</div>
               <div class="font-poppins bg-white text-zinc-700 w-full px-5 py-2 uppercase text-xl mt-2">Il reste seulement {{reste}} exemplaires</div>
-              <FormKit type="submit" input-class="font-poppins bg-rose-100 px-5 py-2 uppercase text-xl mt-20" >Enregister</FormKit>
+              <FormKit type="submit" input-class="font-poppins bg-green-75 px-5 py-2 uppercase text-xl mt-20" >Enregister</FormKit>
               <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl mt-2" @click="commander"/>
+              <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl mt-2" @click="supprimer"/>
               <div v-if="commandeClick" class="font-poppins text-xl mt-2">Merci pour votre commande, <br>
                    un code de réduction vous attend <br>
                    dans votre boite mail</div>
