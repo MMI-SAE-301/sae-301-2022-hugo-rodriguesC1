@@ -26,5 +26,6 @@ module.exports = withAnimations({
     require("@tailwindcss/forms"),
     formKitTailwind,
     require("@headlessui/tailwindcss"),
+    require('tailwind-scrollbar-hide'),
   ],
 });
