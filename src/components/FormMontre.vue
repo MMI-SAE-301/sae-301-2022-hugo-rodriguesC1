@@ -33,12 +33,15 @@ if (props.id) {
 }
 
 async function upsertMontre(dataForm, node) {
-  dataForm.user_id = supabase.auth.user().id
-  const { data, error } = await supabase.from("montre").upsert(dataForm);
-  if (error) node.setErrors([error.message]);
-  else {
-    node.setErrors([]);
-    router.push({ name: "montre-edit-id", params: { id: data[0].montre_id } });
+  if (dataForm.ecran == null){alert("veuillez sélectionner une couleur pour l'écran")}
+  else{
+    dataForm.user_id = supabase.auth.user().id
+    const { data, error } = await supabase.from("montre").upsert(dataForm);
+    if (error) node.setErrors([error.message]);
+    else {
+      node.setErrors([]);
+      router.push({ name: "montre-edit-id", params: { id: data[0].montre_id } });
+    }
   }
 }
 
@@ -50,7 +53,7 @@ async function commander(){
   commandeClick.value=true
   setTimeout(() => {
     router.push("/moncompte");
-  }, 5000)
+  }, 7000)
 }
 
 async function supprimer() {
@@ -101,8 +104,8 @@ reste.value = (150 - count)
                        legend-class="font-poppins text-3xl font-medium w-full"
                        >
                         <template #label="context">
-                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative">
-                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal">{{context.option.label}}</span>
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300">
+                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal dark:text-zinc-900">{{context.option.label}}</span>
                           </div>
             
                         </template>
@@ -126,8 +129,8 @@ reste.value = (150 - count)
                        legend-class="font-poppins text-3xl font-medium w-full"
                        >
                         <template #label="context">
-                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative">
-                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal">{{context.option.label}}</span>
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300">
+                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal dark:text-zinc-900 ">{{context.option.label}}</span>
                           </div>
             
                         </template>
@@ -142,8 +145,8 @@ reste.value = (150 - count)
                        legend-class="font-poppins text-3xl font-medium w-full"
                        >
                         <template #label="context">
-                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative" >
-                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal">{{context.option.label}}</span>
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300" >
+                            <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal dark:text-zinc-900">{{context.option.label}}</span>
                           </div>
             
                         </template>
@@ -152,19 +155,19 @@ reste.value = (150 - count)
               <div class="font-poppins text-xl font-normal">299.99 €</div>
               <div class="font-poppins bg-white text-zinc-700 w-full px-5 py-2 uppercase text-xl mt-2">Il reste seulement {{reste}} exemplaires</div>
               <div class="flex flex-row gap-3 items-center justify-between">
-                <FormKit type="submit" input-class="font-poppins bg-green-75 px-5 py-2 uppercase text-xl " >Enregister</FormKit>
-                <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl " @click="commander"/>
-                <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl " @click="supprimer"/>
+                <FormKit type="submit" input-class="font-poppins bg-green-75 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-green-300" >Enregister</FormKit>
+                <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-blue-300" @click="commander"/>
+                <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-rose-300" @click="supprimer"/>
               </div>
-              <div v-if="commandeClick" class="font-poppins text-xl mt-2">Merci pour votre commande, <br>
-                   un code de réduction vous attend <br>
-                   dans votre boite mail. <br>
-                   Vous allez être redirigé.</div>
+              
             </div>
           </div>
       </FormKit>
     </div>
-    
+    <div v-if="commandeClick" class="font-poppins text-2xl absolute p-8 top-1/3 left-1/3 right-1/3 mx-auto bg-gray-700 bg-opacity-90 flex items-center justify-center text-center">Merci pour votre commande, <br>
+                   un code de réduction vous attend <br>
+                   dans votre boite mail. <br>
+                   Vous allez être redirigé.</div>
   </div>
 </template>
 

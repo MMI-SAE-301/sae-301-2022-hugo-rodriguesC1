@@ -21,7 +21,7 @@ defineProps<{
              legend-class="font-poppins text-3xl font-medium "
              >
         <template #label="context">
-          <div class="h-9 w-16  peer-checked:border-blue-400 peer-checked:border-2" :style="{backgroundColor: context.option.value}"/>
+          <div class="h-9 w-16  peer-checked:border-blue-400 peer-checked:border-2 dark:border-white dark:border" :style="{backgroundColor: context.option.value}"/>
           <span class="sr-only">{{context.option.label}}</span>
         </template>
     </FormKit>
