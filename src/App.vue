@@ -5,7 +5,7 @@ import {user} from '../src/supabase'
 </script>
 
 <template>
-  <nav class="bg-white w-full h-36 flex justify-between px-32 items-center">
+  <nav class="fixed bg-white w-full max-w-full h-36 flex justify-between px-32 items-center  z-20">
     <RouterLink to="/"><img src="/src/assets/Logo.svg" alt="Logo du site" class="w-60"></RouterLink>
     <ul class="flex gap-28 font-poppins uppercase text-xl font-medium items-center">
       <li><RouterLink to="/">Accueil</RouterLink></li>
@@ -17,7 +17,7 @@ import {user} from '../src/supabase'
 
   <!-- Affiche les pages -->
   <Suspense>
-    <router-view class="bg-beige-100 w-full" />
+    <router-view class="bg-beige-100 w-full pt-32" />
   </Suspense>
 
   <footer class="w-full bg-white h-96 px-72 flex items-center justify-between">
