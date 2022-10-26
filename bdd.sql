@@ -109,3 +109,9 @@ FOR SELECT USING (
   auth.uid() = user_id
 );
 
+CREATE POLICY "delete pour ses propres montres"
+ON public.montre
+FOR DELETE USING (
+  auth.uid() = user_id
+);
+
