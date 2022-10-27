@@ -3,7 +3,7 @@
 - **Nom : RODRIGUES**
 - **Prénom : Hugo**
 - **URL maquette Figma: https://www.figma.com/file/BcwHDJNAG05f7QuqvMD2M9/SAE301-Maquette?node-id=49%3A93**
-- **URL publique du site :**
+- **URL publique du site : http://sae301.hrodrigues.fr/**
 - **URL projet Supabase : https://app.supabase.com/project/xmybzgsvdkzrbiqeeect**
   - [x] Avez-vous invité abdallah.makhoul@univ-fcomte.fr dans votre 'Organisation' Supabase ?
 
