@@ -47,6 +47,7 @@ Noté sur 40.
   - Quelles techniques (Grilles Flex...)
     - [Grid](src/pages/index.vue#L8)
     - [Flex](src/pages/index.vue#L29)
+    - [Animation](src/components/Circles.vue#L3)
   - [ ] Mise en page fluide
 - [ ] Mobile First (0-1-2pts)
   - [ ] Plusieurs tailles
