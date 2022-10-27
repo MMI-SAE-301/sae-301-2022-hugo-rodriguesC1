@@ -17,8 +17,8 @@ async function loginF() {
 </script>
 <template>
     <div class="col-span-2 col-start-5 mt-36">
-        <LoginButton :logo="'/src/assets/gLogo.svg'" :name="'Google'" @click="loginG"/>
-        <LoginButton :logo="'/src/assets/fbLogo.svg'" :name="'Facebook'" @click="loginF" class="mt-9"/>
+        <LoginButton logo='/src/assets/gLogo.svg' :name="'Google'" @click="loginG"/>
+        <LoginButton logo="/src/assets/fbLogo.svg" :name="'Facebook'" @click="loginF" class="mt-9"/>
 
     </div>
 </template>  
