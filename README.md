@@ -42,10 +42,7 @@ Noté sur 40.
   - [circles](src/components/Circles.vue)
   - [LoginButton](src/components/LoginButton.vue)
 - Technique CSS (0-1-2pts)
-  - Quelles techniques (Eg. Styles graphiques (répétés) tous ajoutés par CSS et/ou
-    config. Tailwind (eg. before/after avec content, background...))
-    - ...
-  - liens
+
 - Mise en page CSS (0-1-2pts)
   - Quelles techniques (Grilles Flex...)
     - [Grid](src/pages/index.vue#L8)
@@ -56,15 +53,18 @@ Noté sur 40.
     - Lesquelles...
 - [x] Dark Mode (0-1-2pts)
   - [x] Simple usage de 'dark:'
-  - [ ] Mise en place avec usage de custom property pour les couleurs. Ou usage de DaisyUI AVEC thèmes perso
-    - liens
+    - [lien](src/App.vue#L24)
+    - [lien](src/App.vue#L37)
+    - [lien](src/App.vue#L40)
 - "tailwin.config.js" (0-1-2pts)
   - [x] usage basique couleurs/fonts
   - [ ] Comporte des données supplémentaires (utilisées !). Eg: "content-xxx", "bg-xxx", "grid-cols-xxx"...
     - liens
   - [x] utilisation de plugins (scrollbar hide et animate tailwind)
 - Composants "accessibles" (0-1-2pts)
-  - [ ] textes "accessibles" (eg. 'sr-only')
+  - [x] Textes "accessibles" (eg. 'sr-only') [lien](src/components/FormKitListColors.vue#L25)
   - [ ] Contenu accessible ET Usage de composants étudié pour accessibilité (Eg. HeadlessUI)
+  - [x] Alerte si couleur manquante lors de l'enregistrement [lien](src/components/FormMontre.vue#L39)
+  - [x] Message 'Modifications enregistrées' [lien](src/components/FormMontre.vue#L48)
 
 [^1]: Supprimez les mentions inutiles.

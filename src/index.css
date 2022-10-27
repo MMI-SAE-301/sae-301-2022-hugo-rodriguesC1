@@ -16,4 +16,7 @@
     .label {
         @apply absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal;
     }
+    .animHeader {
+        @apply hover:animate-fadeIn hover:animate-faster;
+    }
 }
