@@ -20,7 +20,6 @@ async function getMontre() {
     .select('*')
     .eq('user_id', supabase.auth.user().id)
     .or('montre_commandee.eq.false,montre_commandee.is.null')
-    console.log(data)
     listeMontre.value=data
 }
 async function getMontreC() {
@@ -29,7 +28,6 @@ async function getMontreC() {
     .select('*')
     .eq('user_id', supabase.auth.user().id)
     .eq("montre_commandee", true)
-    console.log(data)
     listeMontreCommandee.value=data
 }
 

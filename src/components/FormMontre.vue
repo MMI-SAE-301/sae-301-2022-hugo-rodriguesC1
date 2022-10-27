@@ -96,7 +96,7 @@ reste.value = (150 - count)
     <div class="col-span-8 col-start-2 mt-32 relative">
       <h1 class="title mb-12">Personnalisation</h1>
       <FormKit type="form" v-model="montre" @submit="upsertMontre" :submit-attrs="{classes: { input: 'sr-only' }}" submit-label="Enregister" >
-          <div class="2xl:flex 2xl:flex-row 2xl:gap-32 2xl:items-center xl:grid xl:grid-cols-2 ">
+          <div class="2xl:flex 2xl:flex-row 2xl:gap-20 2xl:items-center xl:grid xl:grid-cols-2 ">
             <div>
               <FormKitListColors name="bracelet" label="Bracelet"/>
               <FormKit name="forme"
@@ -122,7 +122,7 @@ reste.value = (150 - count)
               <FormKitListColors v-if="forme == 'Dali'" name="ecran" label="Ecran"/>
               <FormKitListColors v-if="forme == 'Dali'" name="boitier" label="Boitier"/>
             </div>
-            <div class="w-96">
+            <div class="w-80">
               <MontreConnectee v-bind="montre"/>
             </div>
             <div class="flex flex-col gap-5">

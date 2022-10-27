@@ -28,7 +28,7 @@ isDarkMode()
       <li><RouterLink to="/" class="hover:bg-green-75 hover:rounded-full p-3 hover:text-zinc-700  animHeader">Accueil</RouterLink></li>
       <li><RouterLink v-if="user" to="/montre/new" class="hover:bg-rose-200 hover:rounded-full p-3 hover:text-zinc-700 animHeader">Personnaliser</RouterLink><RouterLink v-else to="/connexion" class="hover:bg-rose-200 hover:rounded-full p-3 hover:text-zinc-700 animHeader">Personnaliser</RouterLink></li>
       <li><RouterLink v-if="user" to="/moncompte" class="hover:bg-blue-200 hover:rounded-full p-3 hover:text-zinc-700 animHeader">Mon compte</RouterLink><RouterLink v-else to="/connexion" class="hover:bg-blue-200 hover:rounded-full p-3 hover:text-zinc-700 animHeader">Se connecter</RouterLink></li>
-      <li><img src="@/assets/cartIcon.svg"/></li>
+      <li><img v-if="darkMode==false" src="@/assets/cartIcon.svg"/><img v-else src="@/assets/cartIconAlt.svg"/></li>
     </ul>
   </nav>
 
