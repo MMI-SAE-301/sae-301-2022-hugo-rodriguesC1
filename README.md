@@ -31,11 +31,16 @@ Noté sur 40.
 - Code et Commit (0-2-4-6pts)
 - Code HTML spécifiquement sémantique et accessible (0-1-2pts)
 
-- [ ] usage de Classes utilitaires (1pt)
-  - lien vers sa définition
-  - lien vers son usage
-- [ ] Composants graphiques (0-1-2pts)
-  - liens
+- [x] usage de Classes utilitaires (1pt)
+  - [lien vers sa définition](src/index.css)
+  - [lien vers son usage dans index](src/pages/index.vue#L10)
+  - [lien vers son usage dans index](src/pages/index.vue#L13)
+  - [lien vers son usage dans le formulaire](src/components/FormMontre.vue#L111)
+  - [lien vers son usage dans le formulaire](src/components/FormMontre.vue#L115)
+- [x] Composants graphiques (0-1-2pts)
+  - [button](src/components/Button.vue)
+  - [circles](src/components/Circles.vue)
+  - [LoginButton](src/components/LoginButton.vue)
 - Technique CSS (0-1-2pts)
   - Quelles techniques (Eg. Styles graphiques (répétés) tous ajoutés par CSS et/ou
     config. Tailwind (eg. before/after avec content, background...))
@@ -43,20 +48,21 @@ Noté sur 40.
   - liens
 - Mise en page CSS (0-1-2pts)
   - Quelles techniques (Grilles Flex...)
-    - ...
-  - liens
+    - [Grid](src/pages/index.vue#L8)
+    - [Flex](src/pages/index.vue#L29)
   - [ ] Mise en page fluide
 - [ ] Mobile First (0-1-2pts)
   - [ ] Plusieurs tailles
     - Lesquelles...
-- [ ] Dark Mode (0-1-2pts)
-  - [ ] Simple usage de 'dark:'
+- [x] Dark Mode (0-1-2pts)
+  - [x] Simple usage de 'dark:'
   - [ ] Mise en place avec usage de custom property pour les couleurs. Ou usage de DaisyUI AVEC thèmes perso
     - liens
 - "tailwin.config.js" (0-1-2pts)
-  - [ ] usage basique couleurs/fonts
+  - [x] usage basique couleurs/fonts
   - [ ] Comporte des données supplémentaires (utilisées !). Eg: "content-xxx", "bg-xxx", "grid-cols-xxx"...
     - liens
+  - [x] utilisation de plugins (scrollbar hide et animate tailwind)
 - Composants "accessibles" (0-1-2pts)
   - [ ] textes "accessibles" (eg. 'sr-only')
   - [ ] Contenu accessible ET Usage de composants étudié pour accessibilité (Eg. HeadlessUI)
