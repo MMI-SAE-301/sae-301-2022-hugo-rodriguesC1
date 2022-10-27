@@ -48,10 +48,6 @@ Noté sur 40.
     - [Grid](src/pages/index.vue#L8)
     - [Flex](src/pages/index.vue#L29)
     - [Animation](src/components/Circles.vue#L3)
-  - [ ] Mise en page fluide
-- [ ] Mobile First (0-1-2pts)
-  - [ ] Plusieurs tailles
-    - Lesquelles...
 - [x] Dark Mode (0-1-2pts)
   - [x] Simple usage de 'dark:'
     - [lien](src/App.vue#L24)
@@ -59,12 +55,9 @@ Noté sur 40.
     - [lien](src/App.vue#L40)
 - "tailwin.config.js" (0-1-2pts)
   - [x] usage basique couleurs/fonts
-  - [ ] Comporte des données supplémentaires (utilisées !). Eg: "content-xxx", "bg-xxx", "grid-cols-xxx"...
-    - liens
   - [x] utilisation de plugins (scrollbar hide et animate tailwind)
 - Composants "accessibles" (0-1-2pts)
   - [x] Textes "accessibles" (eg. 'sr-only') [lien](src/components/FormKitListColors.vue#L25)
-  - [ ] Contenu accessible ET Usage de composants étudié pour accessibilité (Eg. HeadlessUI)
   - [x] Alerte si couleur manquante lors de l'enregistrement [lien](src/components/FormMontre.vue#L39)
   - [x] Message 'Modifications enregistrées' [lien](src/components/FormMontre.vue#L48)
 
