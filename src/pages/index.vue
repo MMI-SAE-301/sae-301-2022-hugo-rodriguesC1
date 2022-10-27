@@ -5,7 +5,7 @@ import Circles from "@/components/Circles.vue";
 </script>
 
 <template>
-  <div class="grid grid-cols-10 gap-[30px] row-auto lg:grid-cols-8 pb-72">
+  <div class="grid grid-cols-10 gap-[30px] row-auto lg:grid-cols-8 pb-72 md:grid-cols-6 sm:grid-cols-4">
     <div class="font-poppins col-span-2 mt-32 col-start-2">
       <h1 class="text-5xl font-medium ">
         Montre connectée personnalisable
@@ -23,9 +23,9 @@ import Circles from "@/components/Circles.vue";
     </div>
     <RouterLink to="/montre/new" class="row-start-2 col-start-2 col-span-1 mt-10"><Button /></RouterLink>
 
-    <Circles  class="col-start-6 mt-16 lg:col-start-5"/>
+    <Circles  class="col-start-6 mt-16 lg:col-start-5 md:col-start-4 sm:col-start-3"/>
 
-    <div class="row-start-3 col-start-2 col-span-6 font-poppins text-6xl font-normal uppercase mt-52 flex flex-col gap-5">
+    <div class="row-start-3 lg:col-start-2 md:col-start-0 lg:col-span-6 md:col-span-3 font-poppins text-6xl font-normal uppercase mt-52 flex flex-col gap-5">
       <div class="flex flex-row gap-7 items-center justify-end ">
         <div>Personnalise</div>
         <img src="@/assets/visuel1.webp" alt="visuel" class="max-h-16">

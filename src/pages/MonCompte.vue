@@ -60,7 +60,7 @@ onMounted(()=>{
         <div class="row-start-2 col-start-2 col-span-6 bg-white h-96 w-full overflow-y-scroll scrollbar-hide dark:bg-black">
             <div class="grid grid-flow-col auto-cols-max grid-rows-1 gap-28 h-full px-20 py-12 ">
                 <RouterLink :to="{ name: 'montre-edit-id', params: { id: montre.montre_id } }"  v-for="montre in listeMontre" :key="montre.montre_id">
-                    <MontreConnectee v-bind="montre" class="h-full w-full"/>
+                    <MontreConnectee v-bind="montre" class="h-full w-full hover:animate-pulse"/>
                 </RouterLink>
                 <div v-for="montreC in listeMontreCommandee" :key="montreC.montre_id" class="relative">
                     <MontreConnectee  v-bind="montreC" class="h-full w-full opacity-40 "/>

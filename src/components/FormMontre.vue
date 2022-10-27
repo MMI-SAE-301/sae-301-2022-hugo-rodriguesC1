@@ -19,6 +19,9 @@ forme.value = 'Ovale';
 const commandeClick = ref()
 commandeClick.value = false
 
+const sauvegarde = ref()
+sauvegarde.value = false
+
 const reste = ref()
 
 if (props.id) {
@@ -42,6 +45,10 @@ async function upsertMontre(dataForm, node) {
       node.setErrors([]);
       router.push({ name: "montre-edit-id", params: { id: data[0].montre_id } });
     }
+     sauvegarde.value=true
+     setTimeout(()=>{
+       sauvegarde.value=false
+     }, 1500)
   }
 }
 
@@ -84,12 +91,12 @@ reste.value = (150 - count)
 </script>
 
 <template>
-  <div class="grid grid-cols-10 gap-[30px] row-auto  pb-96">
+  <div class="grid grid-cols-10 gap-[30px] row-auto pb-96">
     
     <div class="col-span-8 col-start-2 mt-32 relative">
       <h1 class="text-5xl font-medium mb-12">Personnalisation</h1>
       <FormKit type="form" v-model="montre" @submit="upsertMontre" :submit-attrs="{classes: { input: 'sr-only' }}" submit-label="Enregister" >
-          <div class="flex flex-row gap-32 items-center">
+          <div class="2xl:flex 2xl:flex-row 2xl:gap-32 2xl:items-center xl:grid xl:grid-cols-2 ">
             <div>
               <FormKitListColors name="bracelet" label="Bracelet"/>
               <FormKit name="forme"
@@ -104,7 +111,7 @@ reste.value = (150 - count)
                        legend-class="font-poppins text-3xl font-medium w-full"
                        >
                         <template #label="context">
-                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300">
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300 hover:bg-gray-200">
                             <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal dark:text-zinc-900">{{context.option.label}}</span>
                           </div>
             
@@ -129,7 +136,7 @@ reste.value = (150 - count)
                        legend-class="font-poppins text-3xl font-medium w-full"
                        >
                         <template #label="context">
-                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300">
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300 hover:bg-gray-200">
                             <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal dark:text-zinc-900 ">{{context.option.label}}</span>
                           </div>
             
@@ -145,7 +152,7 @@ reste.value = (150 - count)
                        legend-class="font-poppins text-3xl font-medium w-full"
                        >
                         <template #label="context">
-                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300" >
+                          <div class="h-12 w-40 bg-white  peer-checked:bg-green-75 relative dark:peer-checked:bg-green-300 hover:bg-gray-200" >
                             <span class="absolute inset-0 flex items-center justify-center font-poppins text-xl font-normal dark:text-zinc-900">{{context.option.label}}</span>
                           </div>
             
@@ -155,9 +162,9 @@ reste.value = (150 - count)
               <div class="font-poppins text-xl font-normal">299.99 €</div>
               <div class="font-poppins bg-white text-zinc-700 w-full px-5 py-2 uppercase text-xl mt-2">Il reste seulement {{reste}} exemplaires</div>
               <div class="flex flex-row gap-3 items-center justify-between">
-                <FormKit type="submit" input-class="font-poppins bg-green-75 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-green-300" >Enregister</FormKit>
-                <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-blue-300" @click="commander"/>
-                <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-rose-300" @click="supprimer"/>
+                <FormKit type="submit" input-class="font-poppins bg-green-75 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-green-300 hover:bg-green-400" >Enregister</FormKit>
+                <FormKit v-if="props.id" name="commander" label="commander" type="button" input-class="font-poppins bg-blue-200 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-blue-300 hover:bg-blue-400" @click="commander"/>
+                <FormKit v-if="props.id" name="Supprimer" label="Supprimer" type="button" input-class="font-poppins bg-rose-200 px-5 py-2 uppercase text-xl dark:text-zinc-900 dark:bg-rose-300 hover:bg-rose-400" @click="supprimer"/>
               </div>
               
             </div>
@@ -167,7 +174,11 @@ reste.value = (150 - count)
     <div v-if="commandeClick" class="font-poppins text-2xl absolute p-8 top-1/3 left-1/3 right-1/3 mx-auto bg-gray-700 bg-opacity-90 flex items-center justify-center text-center">Merci pour votre commande, <br>
                    un code de réduction vous attend <br>
                    dans votre boite mail. <br>
-                   Vous allez être redirigé.</div>
+                   Vous allez être redirigé.
+    </div>
+    <div v-if="sauvegarde" class="font-poppins text-xl absolute p-3 top-48 left-1/3 right-1/3 mx-20 bg-green-600 bg-opacity-90 flex items-center justify-center text-center animate-fadeInDown animate-fast  ">
+      Modifications enregistrées
+    </div>
   </div>
 </template>
 

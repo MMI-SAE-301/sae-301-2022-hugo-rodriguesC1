@@ -23,7 +23,7 @@ isDarkMode()
 <template>
   <nav class="fixed bg-white w-full max-w-full h-28 flex justify-between px-32 items-center py-3 z-20 dark:bg-black dark:text-gray-200">
     <RouterLink v-if="darkMode==false" to="/"><img src="/src/assets/Logo.svg" alt="Logo du site" class="max-h-24"></RouterLink>
-    <RouterLink v-else to="/"><img src="/src/assets/Logo.svg" alt="Logo du site" class="max-h-24 bg-white rounded-full"></RouterLink>
+    <RouterLink v-else to="/"><img src="/src/assets/LogoAlt.svg" alt="Logo du site" class="max-h-24"></RouterLink>
     <ul class="flex gap-28 font-poppins uppercase text-xl font-medium items-center">
       <li><RouterLink to="/">Accueil</RouterLink></li>
       <li><RouterLink to="/montre/new">Personnaliser</RouterLink></li>
@@ -47,7 +47,7 @@ isDarkMode()
     </div>
     <div>
       <img v-if="darkMode==false" src="@/assets/Logo.svg" alt="logo du site">
-      <img v-else src="@/assets/Logo.svg" alt="logo du site" class=" bg-white rounded-full">
+      <img v-else src="@/assets/LogoAlt.svg" alt="logo du site" >
     </div>
     <div>
       <ul class="font-poppins uppercase text-xl font-medium flex flex-col gap-16">
