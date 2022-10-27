@@ -7,10 +7,10 @@ import Circles from "@/components/Circles.vue";
 <template>
   <div class="grid grid-cols-10 gap-[30px] row-auto lg:grid-cols-8 pb-72 md:grid-cols-6 sm:grid-cols-4">
     <div class="font-poppins col-span-2 mt-32 col-start-2">
-      <h1 class="text-5xl font-medium ">
+      <h1 class="title">
         Montre connectée personnalisable
       </h1>
-      <p class="font-light text-xl mt-12">
+      <p class="paragraphe mt-12">
         Lancez-vous dans la personnalisation
         de la toute dernière montre connectée 
         Tik Tak. Cette montre épurée au design 
@@ -42,11 +42,11 @@ import Circles from "@/components/Circles.vue";
 
     <div class="flex flex-row col-span-6 col-start-2 row-start-4 mt-40 justify-between items-center px-40">
       <div class="flex flex-col gap-12 font-poppins">
-        <h2 class="text-5xl font-medium ">
+        <h2 class="title">
           Montre connectée <br>
           haut de gamme
         </h2>
-        <p class="text-xl font-normal w-5/6">
+        <p class="paragraphe w-5/6">
           Pour ce nouveau modèle, nous avons 
           séléctionné les meilleurs technologies
            disponibles. Autonomie, performances
@@ -60,10 +60,10 @@ import Circles from "@/components/Circles.vue";
     <div class="flex flex-row col-span-6 col-start-2 row-start-5 mt-40 items-center px-40 gap-28">
       <img src="@/assets/MU3.webp" alt="visuel de la montre" class="max-h-96">
       <div class="flex flex-col gap-12 font-poppins">
-        <h2 class="text-5xl font-medium">
+        <h2 class="title">
           Un design original
         </h2>
-        <p class="text-xl font-normal w-5/6">
+        <p class="paragraphe w-5/6">
           Pour eux qui recherchent une montre 
           connectée qui se démarque visuellement,
            le modèle Dali est fait pour vous. 

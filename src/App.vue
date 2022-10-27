@@ -26,8 +26,8 @@ isDarkMode()
     <RouterLink v-else to="/"><img src="/src/assets/LogoAlt.svg" alt="Logo du site" class="max-h-24"></RouterLink>
     <ul class="flex gap-28 font-poppins uppercase text-xl font-medium items-center">
       <li><RouterLink to="/">Accueil</RouterLink></li>
-      <li><RouterLink to="/montre/new">Personnaliser</RouterLink></li>
-      <li><RouterLink v-if="user" to="/moncompte">Mon compte</RouterLink><RouterLink v-else to="/connexion">Mon compte</RouterLink></li>
+      <li><RouterLink v-if="user" to="/montre/new">Personnaliser</RouterLink><RouterLink v-else to="/connexion">Personnaliser</RouterLink></li>
+      <li><RouterLink v-if="user" to="/moncompte">Mon compte</RouterLink><RouterLink v-else to="/connexion">Se connecter</RouterLink></li>
       <li><img src="@/assets/cartIcon.svg"/></li>
     </ul>
   </nav>
